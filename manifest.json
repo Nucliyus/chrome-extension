@@ -3,9 +3,10 @@
     "name": "Session Manager",
     "version": "1.0",
     "description": "Save, restore, and manage tab sessions with a floating UI.",
-    "permissions": ["tabs", "bookmarks", "storage", "commands"],
+    "permissions": ["tabs", "activeTab",
+    "scripting", "bookmarks", "storage", "commands"],
     "background": {
-      "service_worker": "background.js"
+      "service_worker": "src/background.js"
     },
     "host_permissions": ["http://*/*", "https://*/*"],
     "action": {
