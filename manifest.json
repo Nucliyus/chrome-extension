@@ -1,28 +1,21 @@
 {
     "manifest_version": 3,
-    "name": "Session Manager",
+    "name": "My Chrome Extension",
     "version": "1.0",
-    "description": "Save, restore, and manage tab sessions with a floating UI.",
-    "permissions": ["tabs", "activeTab",
-    "scripting", "bookmarks", "storage", "commands"],
+    "description": "A Chrome extension with session management and floating UI.",
+    "permissions": ["tabs", "storage", "bookmarks"],
+    "host_permissions": ["<all_urls>"],
     "background": {
-      "service_worker": "src/background.js"
+      "service_worker": "background.js"
     },
-    "host_permissions": ["http://*/*", "https://*/*"],
     "action": {
       "default_popup": "popup.html"
     },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ],
     "commands": {
       "_execute_action": {
         "suggested_key": {
-          "default": "Ctrl+Space",
-          "mac": "Command+Space"
+          "default": "Ctrl+Shift+K",
+          "mac": "Command+Shift+K"
         }
       }
     }
